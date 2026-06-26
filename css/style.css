@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,14 +8,39 @@ body {
 }
 
 .galleryContainer {
+    background-color: #ffffff;
+    color: #000000;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .galleryItem {
     margin: 0;
-    width: calc(25% - 10px);
+    width: calc(25% - 20px);
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+    .galleryItem {
+    flex: 0 0 calc(50% - 10px); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .galleryItem {
+    flex: 0 0 calc(25% - 15px); 
+    }
+}
+
+.galleryItem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
